@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Process started at $(date +%m-%d-%Y-%T)"
 'ec2-describe-snapshots' > ec2-snapshots
 awk '{for(i=1;i<=NF;i++) if ($i=="SNAPSHOT") print $(i+1)}' ec2-snapshots > file
